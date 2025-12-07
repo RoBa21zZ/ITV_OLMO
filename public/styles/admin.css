@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.usuario {
+    border-left: 6px solid #4b8df8;
+}
+
+.vehiculo {
+    background: #f7faff;
+    border-left: 4px solid #7aaefc;
+}
+
+.cita {
+    background: #fff8e6;
+    border-left: 4px solid #f0b429;
+}
+
+.btn {
+    padding: 6px 10px;
+    margin-right: 5px;
+    display: inline-block;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.rojo {
+    background: #d9534f;
+}
+
+.admin {
+    background: #5cb85c;
+}
+
+.acciones {
+    margin-bottom: 10px;
+}
