@@ -1,9 +1,5 @@
 <?php
 session_start();
-if (isset($_SESSION["error"])) {
-    echo "" . $_SESSION["error"];
-    unset($_SESSION["error"]);
-}
 ?>
 <?php include __DIR__ . "/components/header.php"  ?>
 
@@ -13,9 +9,9 @@ if (isset($_SESSION["error"])) {
 
 <?php
 
-if (!empty($_SESSION["error_login"])) {
-    echo "<p class='login_error'>" . htmlspecialchars($_SESSION["error_login"]) . "</p>";
-    unset($_SESSION["error_login"]);
+if (!empty($_SESSION["errorRegistro"])) {
+    echo "<p class='errorRegistro'>" . htmlspecialchars($_SESSION["errorRegistro"]) . "</p>";
+    unset($_SESSION["errorRegistro"]);
 }
 
 ?>

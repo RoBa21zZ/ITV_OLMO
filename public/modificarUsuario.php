@@ -9,16 +9,16 @@ if (!isset($_SESSION["usuario_id"])) {
 require_once '../src/UsuarioController.php';
 
 ?>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modificar Información</title>
-</head>
-<body>
+
+<?php include __DIR__ . "/components/header.php"  ?>
+<div class="register_contenedor">
     <h2>Actualizar Usuario</h2>
-    <?php if(isset($_SESSION["error_modificarUsuario"])){echo $_SESSION["error_modificarUsuario"];}?>
+    <?php
+    if (!empty($_SESSION["error_modificarUsuario"])) {
+        echo "<p class='error_modificarUsuario'>" . htmlspecialchars($_SESSION["error_modificarUsuario"]) . "</p>";
+        unset($_SESSION["error_modificarUsuario"]);
+    }
+    ?>
     <form method="POST" action="../src/actualizar_usuario.php" class="registro">
         <label for="nombreUsuario">Nombre:</label>
         <input type="text" id="nombreUsuario" name="nombreUsuario" pattern="{[A-Za-z]}" min="2" max="30" required placeholder="Introduzca su nombre">
@@ -38,5 +38,5 @@ require_once '../src/UsuarioController.php';
         <input type="submit" value="Modificar usuario">
     </form>
     <button><a href="home.php">Inicio</a></button>
-</body>
-</html>
+</div>
+<?php include __DIR__ . "/components/footer.php"  ?>

@@ -1,16 +1,3 @@
-:root {
-  --verde-oscuro: #2e5e2e;
-  --gris-claro: lightgray;
-
-  --font-large: clamp(1.8rem, 3vw, 3rem);
-  --font-medium: clamp(1.1rem, 2vw, 2rem);
-  --font-small: clamp(0.9rem, 1.5vw, 1.4rem);
-
-  --space-s: clamp(0.5rem, 1vw, 1.2rem);
-  --space-m: clamp(1rem, 2vw, 2rem);
-  --space-l: clamp(1.5rem, 3vw, 3rem);
-}
-
 html,
 body {
   height: 100%;
@@ -25,14 +12,14 @@ body {
 }
 
 main {
-  flex: 1; /* Ocupa todo lo que quede -> Footer baja */
-  padding: var(--space-m);
+  flex: 1;
+  padding: 2vw;
 }
 
 header {
-  background-color: var(--verde-oscuro);
+  background-color: #2e5e2e;
   color: white;
-  padding: var(--space-s) var(--space-l);
+  padding: 1vh 3vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,31 +27,42 @@ header {
 }
 
 .app-title {
-  font-size: var(--font-large);
+  font-size: 3vw;
   font-weight: bold;
 }
 
-.app-title >  a{
+.app-title > a {
   color: white;
   text-decoration: none;
 }
 
 nav {
   display: flex;
-  gap: var(--space-s);
+  gap: 1vw;
   flex-wrap: wrap;
 }
 
 nav a {
-  background-color: var(--gris-claro);
-  color: var(--verde-oscuro);
-  padding: var(--space-s) var(--space-m);
+  background-color: lightgray;
+  color: #2e5e2e;
+  padding: 1vh 2vw;
   border-radius: 0.5rem;
   text-decoration: none;
-  font-size: var(--font-medium);
+  font-size: 2vw;
   font-weight: bold;
 }
 
 nav a:hover {
   background-color: #c5c5c5;
+}
+
+@media (max-width: 600px) {
+  .app-title {
+    font-size: 5vw;
+  }
+
+  nav a {
+    font-size: 3.5vw;
+    padding: 1vh 3vw;
+  }
 }

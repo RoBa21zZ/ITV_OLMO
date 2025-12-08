@@ -1,95 +1,87 @@
-/* Contenedor principal del formulario de cita */
 .cita_contenedor {
-    width: 95%;          /* ocupa casi todo el ancho */
-    max-width: 800px;    /* límite máximo para pantallas grandes */
-    margin: 2% auto;
-    padding: 3%;
-    background: #f0f0f0; /* gris claro */
-    border-radius: 8px;
-    box-sizing: border-box;
+  width: 95%;
+  max-width: 800px;
+  margin: 2% auto;
+  padding: 3%;
+  background: #f0f0f0;
+  border-radius: 8px;
+  box-sizing: border-box;
 }
 
-/* Título y mensajes */
 .cita_contenedor h2 {
-    text-align: center;
-    margin-bottom: 2%;
-    color: #2d5c2d; /* verde oscuro */
+  text-align: center;
+  margin-bottom: 2%;
+  color: #2d5c2d;
 }
 
 .cita_contenedor p {
-    color: red;
-    font-weight: bold;
-    margin-bottom: 2%;
-    text-align: center;
+  color: red;
+  font-weight: bold;
+  margin-bottom: 2%;
+  text-align: center;
 }
 
-/* Formulario */
 .cita_form {
-    display: flex;
-    flex-direction: column;
-    gap: 2%;
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
 }
 
-/* Labels */
 .cita_form label {
-    font-weight: bold;
-    margin-bottom: 0.5%;
-    display: block;
+  font-weight: bold;
+  margin-bottom: 0.5%;
+  display: block;
 }
 
-/* Inputs y selects */
 .cita_form input,
 .cita_form select {
-    padding: 2%;
-    font-size: 1em;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    width: 100%;
-    box-sizing: border-box;
+  padding: 2%;
+  font-size: 1em;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Botón enviar */
 .cita_form button {
-    padding: 2% 0;
-    margin-top: 2%;
-    background-color: #2d5c2d; /* verde oscuro */
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 1em;
-    transition: background-color 0.2s;
+  padding: 2% 0;
+  margin-top: 2%;
+  background-color: #2d5c2d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1em;
+  transition: background-color 0.2s;
 }
 
 .cita_form button:hover {
-    background-color: #244b24;
+  background-color: #244b24;
 }
 
-/* Botón volver al inicio */
 .cita_volver {
-    display: block;
-    margin: 2% auto;
-    text-align: center;
+  display: block;
+  margin: 2% auto;
+  text-align: center;
 }
 
 .cita_volver a {
-    text-decoration: none;
-    background-color: #2d5c2d;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 6px;
-    font-weight: bold;
+  text-decoration: none;
+  background-color: #2d5c2d;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
 }
 
 .cita_volver a:hover {
-    background-color: #244b24;
+  background-color: #244b24;
 }
 
-/* Responsivo para pantallas pequeñas */
 @media (max-width: 600px) {
-    .cita_contenedor {
-        width: 98%;
-        padding: 5%;
-    }
+  .cita_contenedor {
+    width: 98%;
+    padding: 5%;
+  }
 }

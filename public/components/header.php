@@ -19,16 +19,17 @@ if (session_status() === PHP_SESSION_NONE) {
     <link rel="stylesheet" href="styles/userInfo.css">
     <link rel="stylesheet" href="styles/login.css">
     <link rel="stylesheet" href="styles/register.css">
+    <link rel="stylesheet" href="styles/info.css">
 </head>
 
 <body>
 
 <header>
-    <div class="app-title"><a href="../public/home.php">ITV El Olmo</a></div>
+    <div class="app-title"><a href="../public/home.php">ITV El Olmo.</a></div>
 
     <nav>
         <a href="info.php">Sobre Nosotros</a>
-        <a href="queEsITV.php">¿Qué es la ITV?</a>
+        <a href="info_itv.php">¿Qué es la ITV?</a>
         <a href="introducirCita.php">Añadir Cita</a>
     </nav>
 </header>

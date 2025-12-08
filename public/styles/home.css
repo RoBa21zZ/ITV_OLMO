@@ -1,84 +1,84 @@
-/* Contenedor general */
 .home_contenedor {
-    padding: 5%;           /* en % para que escale con el ancho */
-    max-width: 90%;        /* limita ancho máximo relativo */
-    margin: auto;
-    box-sizing: border-box;
+  padding: 5%;
+  max-width: 90%;
+  margin: auto;
+  box-sizing: border-box;
 }
 
-/* Lista de vehículos */
 .home_lista {
-    list-style: none;
-    padding: 0;
-    margin: 2% 0;
+  list-style: none;
+  padding: 0;
+  margin: 2% 0;
 }
 
-/* Cada vehículo */
 .home_item {
-    background: whitesmoke;   
-    padding: 1.5%;          
-    margin-bottom: 1.2%;    
-    border-radius: 8px;    
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 5%;                
-    box-sizing: border-box;
+  background: whitesmoke;
+  padding: 1.5%;
+  margin-bottom: 1.2%;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5%;
+  box-sizing: border-box;
 }
 
 .home_item span {
-    font-size: 1.2em;       
-    font-weight: bold;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
-/* Botones */
 .home_item button,
 .home_botones button,
 .annadir_vehiculo {
-    background-color: #2d5c2d; 
-    border: none;
-    padding: 1% 2%;            
-    border-radius: 6px;        
-    cursor: pointer;
-    margin: 1%;
+  background-color: #2d5c2d;
+  border: none;
+  padding: 1% 2%;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 1%;
 }
 
 .home_item button a,
 .home_botones button a,
 .annadir_vehiculo a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.3em; 
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.3em;
 }
 
 .home_item button:hover,
 .home_botones button:hover {
-    background-color: #244b24;
+  background-color: #244b24;
 }
 
-/* Botones inferiores del home */
 .home_botones {
-    margin-top: 3%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5%;
+  margin-top: 3%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5%;
 }
 
-/* Responsivo para pantallas pequeñas */
-@media (max-width: 700px) {
+.itv_lista li,
+.citas_lista li,
+.home_lista li {
+  opacity: 0;
+  animation: slideInLeft 1s forwards;
+}
 
-    .home_item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .home_botones {
-        flex-direction: column;
-    }
-    
-    .home_botones button {
-        width: 100%;
-    }
+@media (max-width: 700px) {
+  .home_item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .home_botones {
+    flex-direction: column;
+  }
+
+  .home_botones button {
+    width: 100%;
+  }
 }

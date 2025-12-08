@@ -28,10 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const minDate = new Date();
 
-    if (
-      hoy.getHours() >= hora_final ||
-      (hora_actual === hora_final && minuto_actual > 0)
-    ) {
+    if (hoy.getHours() >= hora_final || (hora_actual === hora_final && minuto_actual > 0)) {
       minDate.setDate(minDate.getDate() + 1);
     }
 
@@ -136,8 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function marcarHorasOcupadas(horasOcupadas) {
-    //generamos todas las horas.
-    generarHoras();
+    
 
     //Transformamos las horas que vienen del sevidor a un mapa para que esten en un array
     //y asi se pueden comparar con las que estab ocupadas y que el usuario no las pueda seleccionar

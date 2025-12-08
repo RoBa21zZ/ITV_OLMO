@@ -25,7 +25,7 @@ try {
     $usuarioController = new UsuarioController($conn);
 
     if ($usuarioController->usuarioExisteDNI($dni) || $usuarioController->usuarioExisteEmail($email)) {
-        $_SESSION['error'] = "Este usuario ya existe.";
+        $_SESSION['errorRegistro'] = "Este usuario ya existe.";
         header("Location: ../public/register.php");
         exit();
     }
@@ -42,7 +42,7 @@ try {
         header("Location: ../public/login.php");
         exit();
     } else {
-        $_SESSION['error'] = "Error al registrar el usuario.";
+        $_SESSION['errorRegistro'] = "Error al registrar el usuario.";
         header("Location: ../public/register.php");
         exit();
     }

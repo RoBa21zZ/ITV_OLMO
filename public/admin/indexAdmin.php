@@ -33,12 +33,12 @@ $usuarios = $usuarioController->obtnerUsuarios();
     <div class="contenedor">
     
     <?php foreach ($usuarios as $user): ?>
-        <div clas="usuario">
+        <div class="usuario">
             <h3><?= $user->getNombreCompleto() ?> (<?= $user->getEmail() ?>) — Rol: <strong><?= $user->getRol() ?></strong></h3>
             <form action="../../src/procesarAdmin.php" method="POST">
                 <input type="hidden" name="id_usuario" value="<?= $user->getId_usuario(); ?>">
-                <button name="accion" value="cambiar_rol">Cambiar Rol</button>
-                <button name="accion" value="eliminar_usuario" style="background:red;color:white;">Eliminar usuario</button>
+                <button name="accion" value="cambiar_rol" class="btn_eliminar" data-type="rol">Cambiar Rol</button>
+                <button name="accion" value="eliminar_usuario" style="background:red;color:white;" class="btn_eliminar" data-type="usuario">Eliminar usuario</button>
             </form>
 
             <h4>Vehículos</h4>
@@ -48,6 +48,7 @@ $usuarios = $usuarioController->obtnerUsuarios();
             if (empty($vehiculos)) {
                 echo "<p>No tiene vehículos</p>";
             }
+
             ?>
 
             <?php foreach ($vehiculos as $vehiculo): ?>
@@ -56,7 +57,7 @@ $usuarios = $usuarioController->obtnerUsuarios();
 
                     <form action="../../src/procesarAdmin.php" method="POST">
                         <input type="hidden" name="id_vehiculo" value="<?= $vehiculo->getId_vehiculo(); ?>">
-                        <button name="accion" value="eliminar_vehiculo" style="background:red;color:white;">
+                        <button name="accion" value="eliminar_vehiculo" style="background:red;color:white;" class="btn_eliminar" data-type="vehiculo">
                             Eliminar Vehículo
                         </button>
                     </form>
@@ -73,8 +74,8 @@ $usuarios = $usuarioController->obtnerUsuarios();
                             <p>Hora: <?= $cita->getHora_cita() ?></p>
 
                             <form action="../../src/procesarAdmin.php" method="POST">
-                                <input type="hidden" name="id_cita" value="<?= $vehiculo->getId_cita(); ?>">
-                                <button name="accion" value="eliminar_cita" style="background:red;color:white;">
+                                <input type="hidden" name="id_cita" value="<?= $cita->getId_cita(); ?>">
+                                <button name="accion" value="eliminar_cita" style="background:red;color:white;" class="btn_eliminar" data-type="cita">
                                     Eliminar Cita
                                 </button>
                             </form>
@@ -86,7 +87,7 @@ $usuarios = $usuarioController->obtnerUsuarios();
     <?php endforeach; ?>
     </div>
 
-    scrip
+    <script src="../js/confirmEliminar.js"></script>
 </body>
 
 </html>
