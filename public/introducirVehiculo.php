@@ -9,19 +9,11 @@ if (!isset($_SESSION["usuario_id"])) {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <h2>Introduce un nuevo vehiculo </h2>
-    <p><?php if(isset($_SESSION["error"])){echo $_SESSION["error"];} ?></p>
-    <form action="../src/procesarIntroducirVehiculo.php" method="post">
+<?php include __DIR__ . "/components/header.php"  ?>
+<div class="add_vehiculo_contenedor">
+    <h2>Introduce un nuevo vehículo</h2>
+    <p><?php if(isset($_SESSION["error"])){echo $_SESSION["error"]; unset($_SESSION["error"]);} ?></p>
+    <form action="../src/procesarIntroducirVehiculo.php" method="post" class="add_vehiculo_form">
         <label for="matricula">Matricula:</label>
         <input type="text" name="matricula" id="matricula" minlength="5" maxlength="12" placeholder="Ej: 1234-ABC" required>
         <label for="marca">Marca:</label>
@@ -43,7 +35,7 @@ if (!isset($_SESSION["usuario_id"])) {
         <input type="number" name="anno_matriculacion" id="anno_matriculacion" min="1900" max=<?php echo date("Y"); ?> required>
         <button type="submit">Añadir vehiculo</button>
     </form>
-    <script src="../public/js/MarcasModelos.js"></script>
-</body>
+</div>
+<script src="../public/js/MarcasModelos.js"></script>
 
-</html>
+<?php include __DIR__ . "/components/footer.php"  ?>

@@ -9,7 +9,7 @@ class Constantes
     const EXISTE_USUARIO_ID = "SELECT count(*) FROM usuarios WHERE id_usuario = ?";
     const OBTENER_USUARIO_EMAIL = "SELECT * FROM usuarios WHERE email = ?";
     const OBTENER_USUARIO_ID = "SELECT * FROM usuarios WHERE id_usuario = ?";
-    const OBTENER_USUARIOS = "SELECT id_usuario,nombre,apellidos,dni,telefono,email,rol FROM usuarios";
+    const OBTENER_USUARIOS = "SELECT id_usuario,nombre,apellidos,dni,telefono,email,rol FROM usuarios WHERE rol = 'cliente'";
     const INSERTAR_USUARIO = "INSERT INTO usuarios (nombre,apellidos,dni,telefono,email,password) VALUES (?,?,?,?,?,?)";
     const MODIFICAR_USUARIO = "UPDATE usuarios SET nombre = ?, apellidos = ?, dni = ?, telefono = ?, email = ? WHERE id_usuario = ?";
     const MODIFICAR_USUARIO_ADMIN = "UPDATE usuarios SET rol = 'admin' WHERE id_usuario = ?";

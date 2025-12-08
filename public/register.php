@@ -5,33 +5,21 @@ if (isset($_SESSION["error"])) {
     unset($_SESSION["error"]);
 }
 ?>
-<!DOCTYPE html>
-<html lang="es">
+<?php include __DIR__ . "/components/header.php"  ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        
-        input{
-            border-radius: 50px;
-            border-width: 4px;
+<div class="register_contenedor">
 
-        }
-        
-        :is(input):invalid {
-            border-color: red;
-        }
+<h2>Register</h2>
 
-        :is(input):valid {
-            border-color: green;
-        }
-    </style>
-</head>
+<?php
 
-<body>
-    <h2>Register User</h2>
+if (!empty($_SESSION["error_login"])) {
+    echo "<p class='login_error'>" . htmlspecialchars($_SESSION["error_login"]) . "</p>";
+    unset($_SESSION["error_login"]);
+}
+
+?>
+
     <form method="POST" action="../src/procesarRegistro.php" class="registro">
         <label for="nombreUsuario">Nombre:</label>
         <input type="text" id="nombreUsuario" name="nombreUsuario" pattern="{[A-Za-z]}" min="2" max="30" required placeholder="Introduzca su nombre">
@@ -54,7 +42,6 @@ if (isset($_SESSION["error"])) {
         <br><br>
         <input type="submit" value="Register">
     </form>
-    <button><a href="index.php">Inicio</a></button>
-</body>
-
-</html>
+<button><a href="login.php">Log In</a></button>
+<div class="register_contenedor">
+<?php include __DIR__ . "/components/footer.php"  ?>

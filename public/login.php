@@ -1,33 +1,23 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        *{
-            font-family: Arial, Helvetica, sans-serif;
-
-        }
-    </style>
-</head>
-<body>
-    <h2>LOGIN</h2>
-    
-    <?php
+<?php
         session_start();
         
         if(isset($_SESSION["usuario_id"])){
             header("Location: home.php");
             exit();
-        }
-        
-        if(isset($_SESSION["error_login"])){
-            echo "" . $_SESSION["error_login"];
+        }  
+    ?>
+<?php include __DIR__ . "/components/header.php"  ?>
+<div class="login_contenedor">
+    <h2>Login</h2>
+    
+    <?php
+        if(!empty($_SESSION["error_login"])){
+            echo "<p class='login_error'>" . htmlspecialchars($_SESSION["error_login"]) . "</p>";
             unset($_SESSION["error_login"]);
         }
-        
+    
     ?>
+    
     <form action="../src/procesarLogin.php" method="POST">
         <label for="emailUsuario">Introduzca su email</label>
         <input type="email" name="emailUsuario" id="emailUsuario" placeholder="Introduzca su E-mail" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" required>
@@ -39,5 +29,7 @@
         <br><br>
         <input type="submit" value="Login">
     </form>
-</body>
-</html>
+    <p>¿No tienes cuenta? <a href="register.php">Regístrate aquí</a></p>
+</div>
+<script src="js/confirmEliminar.js"></script>
+<?php include __DIR__ . "/components/footer.php"  ?>

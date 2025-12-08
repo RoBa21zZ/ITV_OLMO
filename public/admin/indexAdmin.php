@@ -38,7 +38,7 @@ $usuarios = $usuarioController->obtnerUsuarios();
             <form action="../../src/procesarAdmin.php" method="POST">
                 <input type="hidden" name="id_usuario" value="<?= $user->getId_usuario(); ?>">
                 <button name="accion" value="cambiar_rol">Cambiar Rol</button>
-                <button name="accion" value="eliminar_usuario" style="background:red;color:white;" onclick="return confirmar('¿Seguro que quieres eliminar esta usuario?')">Eliminar usuario</button>
+                <button name="accion" value="eliminar_usuario" style="background:red;color:white;">Eliminar usuario</button>
             </form>
 
             <h4>Vehículos</h4>
@@ -56,7 +56,7 @@ $usuarios = $usuarioController->obtnerUsuarios();
 
                     <form action="../../src/procesarAdmin.php" method="POST">
                         <input type="hidden" name="id_vehiculo" value="<?= $vehiculo->getId_vehiculo(); ?>">
-                        <button name="accion" value="eliminar_vehiculo" style="background:red;color:white;" onclick="return confirmar('¿Seguro que quieres eliminar este vehiculo?')">
+                        <button name="accion" value="eliminar_vehiculo" style="background:red;color:white;">
                             Eliminar Vehículo
                         </button>
                     </form>
@@ -74,7 +74,7 @@ $usuarios = $usuarioController->obtnerUsuarios();
 
                             <form action="../../src/procesarAdmin.php" method="POST">
                                 <input type="hidden" name="id_cita" value="<?= $vehiculo->getId_cita(); ?>">
-                                <button name="accion" value="eliminar_cita" style="background:red;color:white;" onclick="return confirmar('¿Seguro que quieres eliminar esta cita?')">
+                                <button name="accion" value="eliminar_cita" style="background:red;color:white;">
                                     Eliminar Cita
                                 </button>
                             </form>
@@ -86,7 +86,7 @@ $usuarios = $usuarioController->obtnerUsuarios();
     <?php endforeach; ?>
     </div>
 
-    
+    scrip
 </body>
 
 </html>

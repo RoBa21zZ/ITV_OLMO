@@ -13,7 +13,7 @@
 
     .header h1 {
         font-size: 22px;
-        color: #1e3a8a;
+        color: #2e5e2e;
         margin-bottom: 10px;
         text-transform: uppercase;
     }
@@ -40,7 +40,7 @@
     }
 
     .details th {
-        background-color: #1e3a8a;
+        background-color: #2e5e2e;
         color: #fff;
     }
 

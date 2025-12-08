@@ -12,7 +12,7 @@ $conn = (new DatabaseConnection())->conectar();
 
 $vehiculoController = new VehiculoController($conn);
 
-$citaController = new CitaController($conn);    
+$citaController = new CitaController($conn);
 $citaController->actualizarEstadosAutomaticamente();
 
 $usuarioCotroller = new UsuarioController($conn);
@@ -27,52 +27,58 @@ $rol = $usuario->getRol();
 
 $_SESSION["usuario_rol"] = $rol;
 
-if(isset($_SESSION["usuario_rol"]) && $_SESSION["usuario_rol"] == "admin"){
+if (isset($_SESSION["usuario_rol"]) && $_SESSION["usuario_rol"] == "admin") {
     header("Location: admin/indexAdmin.php");
 }
 
 ?>
-<!DOCTYPE html>
-<html lang="es">
+<?php include __DIR__ . "/components/header.php"  ?>
+<div class="home_contenedor">
+    <h2>Bienvenido <a href="userInfo.php" title="Más información"><?php echo $_SESSION["usuario_nombre"] ?></a></h2>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 
-<body>
-    <h2>Bienvenido <a href="userInfo.php" title="Más información"><?php echo $_SESSION["usuario_nombre"]?></a></h2>
-    
-    
     <?php
-    
+
     if (count($vehiculos) === 0) {
         echo "<p>No tienes vehiculos registrados. <a href='introducirVehiculo.php'>Añade uno ahora</a></p>";
     } else {
 
-        echo "<ul>";
+        echo "<ul class = 'home_lista'>";
         foreach ($vehiculos as $vehiculo) {
-            echo "<li>" . htmlspecialchars($vehiculo->getMatricula()) . " - " . htmlspecialchars($vehiculo->getMarca()) . " " . htmlspecialchars($vehiculo->getModelo()) . " (" . htmlspecialchars($vehiculo->getTipo()) . ", " . htmlspecialchars($vehiculo->getAnno_matriculacion()) . ") " . 
-            "<button class='btn_eliminar' data-type='vehiculo'>" .
+            echo "<li class = 'home_item'> 
+            <span>" 
+                . htmlspecialchars($vehiculo->getMatricula()) . " - " 
+                . htmlspecialchars($vehiculo->getMarca()) . " " 
+                . htmlspecialchars($vehiculo->getModelo()) . " (" 
+                . htmlspecialchars($vehiculo->getTipo()) . ", " 
+                . htmlspecialchars($vehiculo->getAnno_matriculacion()) . ") " .
+            "</span>" .  
             
-            "<a href='../src/eliminar_vehiculo.php?id_vehiculo=" . htmlspecialchars($vehiculo->getId_vehiculo()) . "'>Eliminar Vehiculo</a></button> 
-            <button><a href='modificarVehiculo.php?id_vehiculo=" . htmlspecialchars($vehiculo->getId_vehiculo()) . "'>Modificar</a></button>
-            " 
+            "<div>" .
+                "<button class='btn_eliminar' data-type='vehiculo'>" .
 
-            . "</li>";
-            
+                    "<a href='../src/eliminar_vehiculo.php?id_vehiculo=" . htmlspecialchars($vehiculo->getId_vehiculo()) . "'>Eliminar Vehículo ❌</a>
+                    
+                </button> 
+                
+                
+                <button>
+                    <a href='modificarVehiculo.php?id_vehiculo=" . htmlspecialchars($vehiculo->getId_vehiculo()) . "'>Modificar Vehículo ✏️</a>
+                </button>
+                " .
+            "</div>" .
+            "</li>";
         }
         echo "</ul>";
-        echo "<p><a href='introducirVehiculo.php'>Añadir otro vehiculo</a></p>";
-    
+        echo "<button class='annadir_vehiculo'><a href='introducirVehiculo.php'>Añadir otro vehiculo</a></button>";
     }
     ?>
-    <button><a href="introducirCita.php">Nueva Cita</a></button>
-    <button><a href="citasInfo.php">Ver mis Citas</a></button>
-    <button><a href="../src/logOut.php">Log Out</a></button>
+    <div class="home_botones">
+        <button><a href="introducirCita.php">Nueva Cita</a></button>
+        <button><a href="citasInfo.php">Ver mis Citas</a></button>
+        <button><a href="../src/logOut.php">Log Out</a></button>
+    </div>
 
-    <script src="js/confirmEliminar.js"></script>
-</body>
-
-</html>
+</div>
+<script src="js/confirmEliminar.js"></script>
+<?php include __DIR__ . "/components/footer.php"  ?>

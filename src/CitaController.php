@@ -204,18 +204,18 @@ class CitaController
 
         if ($fechaCita < $fechaHoraActual) {
             $estadoTiempo = "vencida";
-            $mensaje = "<p style='color:red'>❗ Esta cita ha vencido. No puedes modificarla.</p>";
+            $mensaje = "<p class='cita_mensaje' style='color:red'>❗ Esta cita ha vencido. No puedes modificarla.</p>";
             $puedeModificar = false;
             $resto = "";
         } else if ($fechaCita->format("Y-m-d") == $fechaHoraActual->format("Y-m-d")) {
             $estadoTiempo = "hoy";
-            $mensaje = "<p style='color:orange'>⚠️ Tu cita es HOY.</p>";
+            $mensaje = "<p class='cita_mensaje' style='color:orange'>⚠️ Tu cita es HOY.</p>";
             $puedeModificar = true;
             $resto = "";
         } else {
             $estadoTiempo = "futuro";
             $resto = $this->tiempoRestante($cita->getFecha_cita(), $cita->getHora_cita());
-            $mensaje = "<p>⏳ Falta: $resto</p>";
+            $mensaje = "<p class='cita_mensaje'>⏳ Falta: $resto</p>";
             $puedeModificar = true;
         }
 

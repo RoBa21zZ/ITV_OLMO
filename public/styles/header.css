@@ -1,0 +1,70 @@
+:root {
+  --verde-oscuro: #2e5e2e;
+  --gris-claro: lightgray;
+
+  --font-large: clamp(1.8rem, 3vw, 3rem);
+  --font-medium: clamp(1.1rem, 2vw, 2rem);
+  --font-small: clamp(0.9rem, 1.5vw, 1.4rem);
+
+  --space-s: clamp(0.5rem, 1vw, 1.2rem);
+  --space-m: clamp(1rem, 2vw, 2rem);
+  --space-l: clamp(1.5rem, 3vw, 3rem);
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: lightgray;
+  font-family: Arial, sans-serif;
+}
+
+main {
+  flex: 1; /* Ocupa todo lo que quede -> Footer baja */
+  padding: var(--space-m);
+}
+
+header {
+  background-color: var(--verde-oscuro);
+  color: white;
+  padding: var(--space-s) var(--space-l);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.app-title {
+  font-size: var(--font-large);
+  font-weight: bold;
+}
+
+.app-title >  a{
+  color: white;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: var(--space-s);
+  flex-wrap: wrap;
+}
+
+nav a {
+  background-color: var(--gris-claro);
+  color: var(--verde-oscuro);
+  padding: var(--space-s) var(--space-m);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-size: var(--font-medium);
+  font-weight: bold;
+}
+
+nav a:hover {
+  background-color: #c5c5c5;
+}

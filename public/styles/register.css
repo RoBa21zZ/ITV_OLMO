@@ -1,0 +1,89 @@
+/* Contenedor principal */
+.register_contenedor {
+    width: 90%;
+    max-width: 500px;
+    margin: 3% auto;
+    padding: 3%;
+    background: #f0f0f0; /* gris claro */
+    border-radius: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Título */
+.register_contenedor h2 {
+    color: #2d5c2d;
+    margin-bottom: 20px;
+}
+
+/* Labels */
+.register_contenedor label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+/* Campos de entrada */
+.register_contenedor input[type="text"],
+.register_contenedor input[type="email"],
+.register_contenedor input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Botón Register */
+.register_contenedor input[type="submit"] {
+    width: 100%;
+    background-color: #2d5c2d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.register_contenedor input[type="submit"]:hover {
+    background-color: #244b24;
+}
+
+/* Botón de volver */
+.register_contenedor button {
+    background-color: #2d5c2d;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.register_contenedor button a {
+    color: white;
+    text-decoration: none;
+}
+
+.register_contenedor button:hover {
+    background-color: #244b24;
+}
+
+/* Mensaje de error */
+.register_error {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .register_contenedor {
+        width: 95%;
+        padding: 5%;
+    }
+}

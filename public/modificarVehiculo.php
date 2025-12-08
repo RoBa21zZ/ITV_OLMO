@@ -19,21 +19,15 @@ $db = new DatabaseConnection();
 $conn = $db->conectar();
 
 ?>
-<!DOCTYPE html>
-<html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modificar Vehiculo</title>
-</head>
+<?php include __DIR__ . "/components/header.php"?>
 
-<body>
+<div class="add_vehiculo_contenedor">
     <h2>Modificar Vehiculo</h2>
     <p><?php if (isset($_SESSION["error_actaulizarVehiculo"])) {
             echo $_SESSION["error_actaulizarVehiculo"];
         } ?></p>
-    <form action="../src/actualizar_vehiculo.php" method="post">
+    <form action="../src/actualizar_vehiculo.php" method="post" class="add_vehiculo_form">
         <input type="hidden" name="id_vehiculo" value="<?php echo htmlspecialchars($id_vehiculo); ?>">
         <label for="matricula">Matricula:</label>
         <input type="text" name="matricula" id="matricula" minlength="5" maxlength="12" placeholder="Ej: 1234-ABC" required>
@@ -56,7 +50,7 @@ $conn = $db->conectar();
         <input type="number" name="anno_matriculacion" id="anno_matriculacion" min="1900" max=<?php echo date("Y"); ?> required>
         <button type="submit">Guardar cambios</button>
     </form>
-    <script src="../public/js/MarcasModelos.js"></script>
-</body>
+</div>
+<script src="../public/js/MarcasModelos.js"></script>
 
-</html>
+<?php include __DIR__ . "/components/footer.php"  ?>

@@ -19,18 +19,10 @@ $db = new DatabaseConnection();
 $conn = $db->conectar();
 
 ?>
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modificar Cita</title>
-</head>
-
-<body>
+<?php include __DIR__ . "/components/header.php"  ?>
+<div class="cita_contenedor">
     <h2>Modificar Cita</h2>
-    <form action="../src/actualizar_cita.php" method="POST">
+    <form action="../src/actualizar_cita.php" method="POST" class="cita_form">
         <input type="hidden" name="id_cita" value="<?php echo htmlspecialchars($id_cita); ?>">
         <label for="fecha_cita">Nueva Fecha:</label>
         <input type="date" name="fecha_cita" id="fecha_cita" required>
@@ -40,12 +32,13 @@ $conn = $db->conectar();
 
         </select>
 
-        
-        <button type="submit">Modificar cita</button>
-        
-    </form>
-    <a href="citasInfo.php">Volver</a>
-    <script src="../public/js/citas.js"></script>
-</body>
 
-</html>
+        <button type="submit">Modificar cita</button>
+
+    </form>
+    <div class="cita_volver">
+        <a href="home.php">Volver al inicio</a>
+    </div>
+    <script src="../public/js/citas.js"></script>
+</div>
+<?php include __DIR__ . "/components/footer.php"  ?>
