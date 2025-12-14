@@ -108,6 +108,17 @@
   background-color: #244b24;
 }
 
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .itv_lista li,
 .citas_lista li,
 .home_lista li {

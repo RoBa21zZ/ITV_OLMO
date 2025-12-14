@@ -1,6 +1,6 @@
 <style>
     body {
-        font-family: DejaVu Sans, sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
         color: #333;
         line-height: 1.5;
         padding: 25px;

@@ -25,14 +25,14 @@ if (!isset($_SESSION["usuario_id"])) {
         <select id="modelo" name="modelo" required>
             <option value="">Seleccione una marca primero</option>
         </select> <label for="tipo_vehiculo">Seleccione el tipo de vehiculo</label>
-        <select name="tipo_vehiculo" id="tipo_vehiculo">
+        <select name="tipo_vehiculo" id="tipo_vehiculo" required>
             <option value="" disabled selected>Porfavor escoge una opción</option>
             <option value="menos_3500kg">Vehiculo con menos de 3500Kg de MMA</option>
             <option value="mas_3500kg">Vehiculo con mas de 3500Kg de MMA</option>
             <option value="agricola">Vehiculo agricola</option>
         </select>
         <label for="anno_matriculacion">Año de matriculación</label>
-        <input type="number" name="anno_matriculacion" id="anno_matriculacion" min="1900" max=<?php echo date("Y"); ?> required>
+        <input type="number" name="anno_matriculacion" id="anno_matriculacion" min="1900" max=<?php echo date("Y"); ?> placeholder="Año mínimo 1900" required>
         <button type="submit">Añadir vehiculo</button>
     </form>
 </div>

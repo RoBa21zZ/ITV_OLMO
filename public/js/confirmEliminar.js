@@ -1,3 +1,7 @@
+/*
+Este script nos permite diferenciar entre distintos tipos de botones y asi mostrar 
+un mensaje de confirmacion adecuado antes de eliminar un elemento.
+*/
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".btn_eliminar").forEach((enlace) => {
     enlace.addEventListener("click", function (e) {

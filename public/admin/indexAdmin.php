@@ -14,6 +14,7 @@ $usuarioController = new UsuarioController($conn);
 $vehiculosController = new VehiculoController($conn);
 $citaController = new CitaController($conn);
 $usuarios = $usuarioController->obtnerUsuarios();
+$citaController->actualizarEstadosAutomaticamente();
 
 ?>
 

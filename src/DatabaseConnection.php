@@ -22,7 +22,7 @@ class DatabaseConnection
             $conexion->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_CLASS);
 
             return $conexion;
-            //echo "<br>Conexión realizada correctamente.<br>";
+
         } catch (PDOException $e) {
             echo "Error de conexión: " . $e->getMessage();
         }

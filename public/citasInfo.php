@@ -50,7 +50,7 @@ try {
 
             echo "<div class='acciones_cita'>";
 
-            echo "<button class='btn_Cita_pdf'><a href='../src/procesarPdfCita.php?id_cita=" . htmlspecialchars($cita->getId_cita()) . "'>Descargar Justificante Cita 🗃️</a></button>";
+            echo "<button class='btn_Cita_pdf' ><a href='../src/procesarPdfCita.php?id_cita=" . htmlspecialchars($cita->getId_cita()) . "'>Descargar Justificante Cita 🗃️</a></button>";
 
             if ($datos["puedeModificar"]  && $datos["estadoTiempo"] !== "vencida") {
                 echo "<button class='btn_modificar'><a href='modificarCita.php?id_cita=" . htmlspecialchars($cita->getId_cita()) . "'>Modificar ✏️</a></button>";
@@ -58,13 +58,9 @@ try {
                 echo "<button class='btn_modificar' disabled>Modificar</button>";
             }
 
-            echo "<button class='btn_eliminar'><a href='../src/eliminar_cita.php?id_cita=" . htmlspecialchars($cita->getId_cita()) . "'>Eliminar Cita ❌</a></button>";
-
-
-
+            echo "<button class='btn_eliminar' data-type='cita'><a href='../src/eliminar_cita.php?id_cita=" . htmlspecialchars($cita->getId_cita()) . "'>Eliminar Cita ❌</a></button>";
 
             echo "</div>";
-
 
             echo "</li><br>";
         }
@@ -80,3 +76,4 @@ try {
 
 </div>
 <script src="js/confirmEliminar.js"></script>
+<?php include __DIR__ . "/components/footer.php"; ?>

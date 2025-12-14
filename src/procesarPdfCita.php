@@ -24,7 +24,7 @@ $cita = $citaController->obterCitaPorID($id_cita);
 
 
 ob_start();
-include "../src/templates/template_cita_previaPdf.php"; // carga el HTML con los datos dinámicos
+include "../src/templates/template_cita_previaPdf.php"; 
 $html = ob_get_clean();
 
 $pdf = new Dompdf();

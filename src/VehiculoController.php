@@ -124,7 +124,7 @@ class VehiculoController
         //3 posibles patrones de matriculas 
         $patrones = [
             '/^\d{4}[- ]?[A-Z]{3}$/i', //moderna
-            '/^[A-Z]{1,2}[- ]?\d{4}[- ]?[A-Z]{0,2}$/i', // antigua
+            '/^(A|AB|AL|AV|B|BA|BI|BU|C|CA|CC|CE|CO|CR|CS|CU|GC|GI|GR|GU|H|HU|J|L|LE|LO|LU|M|MA|MU|NA|OU|O|P|PM|PO|S|SA|SE|SG|SO|SS|T|TE|TF|TO|V|VA|VI|Z|ZA)[ -]?\d{4}[ -]?[A-Z]{0,2}$/i', // antigua
             '/^E[ \-]?\d{4}[ \-]?[A-Z]{2}$/i' //vehiculo agricola
         ];
         //comprobamos si coincide con algun patron y devolvemos true

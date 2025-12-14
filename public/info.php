@@ -1,10 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION["usuario_id"])) {
-    header("Location: login.php");
-    exit();
-}
-?>
 <?php include __DIR__ . "/components/header.php"; ?>
 
 <div class="info_contenedor">

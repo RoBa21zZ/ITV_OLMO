@@ -1,10 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION["usuario_id"])) {
-    header("Location: login.php");
-    exit();
-}
-?>
 <?php include __DIR__ . "/components/header.php"; ?>
 
 <div class="info_contenedor">
@@ -14,7 +7,7 @@ if (!isset($_SESSION["usuario_id"])) {
     </p>
 
     <p>
-        En nuestras estaciones SYC Applus+ ITV ofrecemos los mecanismos necesarios para garantizar la seguridad de todos los usuarios y que los vehículos estén en condiciones óptimas.
+        En nuestras estación ofrecemos los mecanismos necesarios para garantizar la seguridad de todos los usuarios y que los vehículos estén en condiciones óptimas.
     </p>
 
     <h3>Pasos de la inspección:</h3>

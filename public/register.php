@@ -33,8 +33,7 @@ if (!empty($_SESSION["errorRegistro"])) {
         <input type="email" id="emailUsuario" name="emailUsuario" placeholder="Introduzca su E-mail" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" required>
         <br><br>
         <label for="contra">Contraseña:</label>
-        <!-- <input type="password" id="contraUsuario" name="contraUsuario" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$" title="Debe contener al menos una mayúscula un número y careacter especial. Mínimo 8 caracteres" minlength="8" maxlength="100" placeholder="Introduzca una contraseña" required> -->
-        <input type="password" id="contraUsuario" name="contraUsuario" title="Debe contener al menos una mayúscula un número y careacter especial. Mínimo 8 caracteres" minlength="8" maxlength="100" placeholder="Introduzca una contraseña" required>
+        <input type="password" id="contraUsuario" name="contraUsuario" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$" title="Debe contener al menos una mayúscula un número y careacter especial. Mínimo 8 caracteres" minlength="8" maxlength="100" placeholder="Introduzca una contraseña" required>
         <br><br>
         <input type="submit" value="Register">
     </form>

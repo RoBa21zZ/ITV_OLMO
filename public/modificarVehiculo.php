@@ -26,6 +26,7 @@ $conn = $db->conectar();
     <h2>Modificar Vehiculo</h2>
     <p><?php if (isset($_SESSION["error_actaulizarVehiculo"])) {
             echo $_SESSION["error_actaulizarVehiculo"];
+            unset($_SESSION["error_actaulizarVehiculo"]);
         } ?></p>
     <form action="../src/actualizar_vehiculo.php" method="post" class="add_vehiculo_form">
         <input type="hidden" name="id_vehiculo" value="<?php echo htmlspecialchars($id_vehiculo); ?>">
@@ -39,15 +40,16 @@ $conn = $db->conectar();
         <label for="modelo">Modelo:</label>
         <select id="modelo" name="modelo" required>
             <option value="">Seleccione una marca primero</option>
-        </select> <label for="tipo_vehiculo">Seleccione el tipo de vehiculo</label>
-        <select name="tipo_vehiculo" id="tipo_vehiculo">
+        </select> 
+        <label for="tipo_vehiculo">Seleccione el tipo de vehiculo</label>
+        <select name="tipo_vehiculo" id="tipo_vehiculo" required>
             <option value="" disabled selected>Porfavor escoge una opción</option>
             <option value="menos_3500kg">Vehiculo con menos de 3500Kg de MMA</option>
             <option value="mas_3500kg">Vehiculo con mas de 3500Kg de MMA</option>
             <option value="agricola">Vehiculo agricola</option>
         </select>
         <label for="anno_matriculacion">Año de matriculación</label>
-        <input type="number" name="anno_matriculacion" id="anno_matriculacion" min="1900" max=<?php echo date("Y"); ?> required>
+        <input type="number" name="anno_matriculacion" id="anno_matriculacion" min="1900" max=<?php echo date("Y"); ?> placeholder="Año mínimo 1900" required>
         <button type="submit">Guardar cambios</button>
     </form>
 </div>
